@@ -1,0 +1,49 @@
+schema_version: rsav-experiment-v1
+dataset:
+  id: yoonholee/terminalbench-trajectories
+  revision: 04e8940f5b6736a7ce8d22224fe2f2af74163ed2
+  split: train
+  trajectories: 120
+  sources:
+    - terminus-2::moonshotai/Kimi-K2-Thinking@together_ai
+    - openhands::Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8@together_ai
+    - claude-code::claude-opus-4-5-20251101@anthropic
+  per_source: 40
+  target_per_label_per_source: 20
+  sampling_seed: 20260905
+  calibration_fraction_by_task: 0.3333333333333333
+renderers:
+  tier_a: [R0_native, R1_tagged, R2_compact_json, R3_pretty_json, R4_messages]
+  tier_b: [B1_reasoning_removed, B2_chatter_inserted]
+verifiers:
+  - id: Qwen/Qwen3.5-9B
+    revision: c202236235762e1c871ad0ccb60c8ee5ba337b9a
+  - id: google/gemma-3-12b-it
+    revision: 96b6f1eccf38110c56df3a15bffe176da04bfd80
+  - id: mistralai/Ministral-3-14B-Instruct-2512-BF16
+    revision: 3cea74c1ebaf5ce5f5a2553de470e2ceab825142
+scoring:
+  answers: [SUCCESS, FAILURE]
+  include_eos: true
+  chat_template_kwargs:
+    enable_thinking: false
+  dtype: bfloat16
+  quantization: null
+  cpu_offload: false
+  max_context_tokens: null  # set from data/model preflight; no silent truncation
+analysis:
+  threshold_fit: maximize_native_calibration_balanced_accuracy
+  threshold_tie_break: highest
+  materiality_margin: 0.05
+  bootstrap_replicates: 10000
+  bootstrap_seeds: [20260905, 20260906]
+  cluster: task_name
+  multiplicity: holm
+compute:
+  provider: lambda
+  preferred_instance: A6000_48GB
+  memory_fallback: GH200_96GB
+  x86_fallback: A100_80GB
+  smoke_cap_usd: 50
+  projected_pre_tax_stop_usd: 700
+  hard_all_in_cap_usd: 1000

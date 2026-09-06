@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv
+experiments/**/checkpoints/
+data/raw/
+data/cache/
+experiments/**/model-cache/
+# Full public trajectories can contain credential-shaped benchmark text. Regenerate locally.
+experiments/e0-data-preflight/manifest.jsonl

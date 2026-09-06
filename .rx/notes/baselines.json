@@ -1,0 +1,33 @@
+{
+  "candidate_baselines": [
+    "A3 judge modes",
+    "AER trajectory judge",
+    "AgentRewardBench judge",
+    "AndroidArena judge",
+    "Belief instrumentation and verification masks",
+    "Canonical schema embedding",
+    "Discrete LM judge",
+    "Few-shot chain-of-thought",
+    "Human annotator agreement",
+    "Human expert labels",
+    "NNetNav summary judge",
+    "Oracle candidate selection",
+    "Oracle-free metamorphic relation",
+    "Outcome-only judge",
+    "Programmatic rule engine",
+    "Random candidate selection",
+    "Raw reference harness",
+    "SPA-Bench judge",
+    "Self-consistency ensemble",
+    "Simple direct judge",
+    "Simplified direct trajectory judge",
+    "Static reasoning benchmark evaluation",
+    "Step-rubric judge",
+    "V1 verifier",
+    "WebJudge",
+    "WebVoyager evaluator"
+  ],
+  "closest_collision": "trajectory-judge",
+  "strongest_agent_representation_neighbor": "agentrewardbench",
+  "status": "candidate set; scope and compute not locked"
+}

@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "representation-sensitive-agent-verifiers"
+version = "0.1.0"
+description = "Paired lossless-rendering tests for frozen agent outcome verifiers"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+data = ["datasets>=3.0", "huggingface-hub>=0.27"]
+gpu = [
+  "accelerate>=1.2",
+  "safetensors>=0.4",
+  "torch>=2.5",
+  "transformers>=4.50",
+]
+test = ["pytest>=8.0"]
+
+[project.scripts]
+rsav = "rsav.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "code"}
+
+[tool.setuptools.packages.find]
+where = ["code"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

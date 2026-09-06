@@ -1,0 +1,51 @@
+{
+  "all_tier_a_roundtrips_valid": true,
+  "common_eligible_tasks": 88,
+  "eligible_counts": {
+    "claude-code::claude-opus-4-5-20251101@anthropic": {
+      "0": 204,
+      "1": 232
+    },
+    "openhands::Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8@together_ai": {
+      "0": 644,
+      "1": 226
+    },
+    "terminus-2::moonshotai/Kimi-K2-Thinking@together_ai": {
+      "0": 572,
+      "1": 320
+    }
+  },
+  "exclusion_counts": {
+    "invalid_or_incomplete_row": 17,
+    "not_in_common_task_support": 20,
+    "not_sampled": 2058,
+    "source_not_selected": 49889
+  },
+  "partition_counts": {
+    "calibration": 36,
+    "evaluation": 84
+  },
+  "sampling_seed": 20260905,
+  "selected_counts": {
+    "claude-code::claude-opus-4-5-20251101@anthropic": {
+      "0": 20,
+      "1": 20
+    },
+    "openhands::Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8@together_ai": {
+      "0": 20,
+      "1": 20
+    },
+    "terminus-2::moonshotai/Kimi-K2-Thinking@together_ai": {
+      "0": 20,
+      "1": 20
+    }
+  },
+  "selected_tasks": 66,
+  "selected_trajectories": 120,
+  "sources": [
+    "terminus-2::moonshotai/Kimi-K2-Thinking@together_ai",
+    "openhands::Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8@together_ai",
+    "claude-code::claude-opus-4-5-20251101@anthropic"
+  ],
+  "task_catalog_entries": 241
+}
